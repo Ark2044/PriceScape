@@ -1,0 +1,888 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body{
+    width: 100%;
+    height: 100%;
+    background-color: #f8fad8;
+}
+.main{
+    height: 100%;
+    width: 100%;
+    position: relative;
+  
+}
+
+.nav{
+    height: 100px;
+    width: 100%;
+    border-bottom: 2px solid #dadada;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 4vw;
+    position: sticky;
+
+}
+.nav img{
+  height: 80px;
+}
+.nav-part2{
+    display: flex;
+    gap: 2.4vw;
+    align-items: center;
+}
+.nav h2{
+    font-size: 2.7vw;
+    font-weight: 800;
+}
+.nav h4{
+    font-size: 1.3vw;
+}
+.nav h4:hover{
+  transform: scale(1.06);
+  text-decoration: underline;
+  cursor: pointer;
+}
+.nav button{
+    font-size: 1.3vw;
+    padding: 0.7vw 1.4vw;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+}
+.nav i{
+    /* font-size: 3.4vw; */
+    font-size: 800;
+    display: none;
+}
+
+.content{
+    height: calc(100% - 100px);
+    width: 100%;
+    display: flex;
+    position: relative;
+}
+.left{
+    height: 100%;
+    width: 55%;
+    padding: 5vw 4vw;
+}
+.left h1{
+    font-size: 4.2vw;
+    line-height: 3.9vw;
+}
+.left h1 span{
+    color: #00b4d8;
+}
+.left p{
+    font-size: 1.2vw;
+    font-weight: 600;
+    color: #666;
+    width: 80%;
+    margin-top: 3vw;
+    margin-bottom: 4vw;
+}
+.content button{
+    font-size: 1.5vw;
+    padding: 1.3vw 2.3vw;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-weight: 700;
+}
+
+
+.right{
+    height: 100%;
+    width: 45%;
+}
+.right img{
+    height: 80%;
+    width: 100%;
+    padding: 20px;
+    border-radius: 25px;
+}
+
+.seperation{
+    height: 7px;
+    background-color: rgb(201, 201, 201);
+    opacity: 0.4;
+}
+
+.feature{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 8vh 4vw;
+}
+.feature h1{
+  width:45vw ;
+  font-size: 3.8vw;
+}
+.feature p{
+  width: 30vw;
+  padding: 1.7vw 1.3vw;
+  font-size: 1.5vw;
+}
+
+.features-parent{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 3vw;
+  padding: 25px 0px;
+}
+.features{
+  height: 42vh;
+  width: 22vw;
+  /* border: 2px solid black; */
+  display: flex;
+  flex-direction: column;
+  padding: 11px 18px;
+  background-color: turquoise;
+  border-radius: 10px;
+  color: #0056b3;
+  text-align: center;
+}
+.features img{
+  height: 25vh;
+margin: 5px;
+  opacity: 1;
+}
+.features2{
+  height: 48vh;
+  background-color: skyblue;
+  text-align: center;
+
+}
+.features2 img{
+  height: 30vh;
+margin: 5px;
+}
+.features3{
+  height: 35vh;
+  background-color: #90e0ef;
+  opacity: 0.49;
+}
+.features:hover {
+  transform: scale(1.1);
+  border: 2px solid darkblue;
+}
+
+
+.search{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8vh 0;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+    /* justify-content: center; */
+}
+.search h1{
+    font-size: 2.2vw;
+    margin-top: 20vh;
+    margin-bottom: 2vw;
+  color: #333;
+}
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  input[type="text"] {
+    padding: 10px;
+    width: 70%;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 2.8vh;
+  }
+  button {
+    padding: 10px 15px;
+    margin-left: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  #search-results {
+    margin-top: 20px;
+  }
+
+.categories{
+  /* height: 10vh; */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  /* justify-content: center;
+  text-align:center; */
+  /* gap: 30px; */
+}
+.categories .left{
+  width: 20%;
+  height: 10vh;
+  padding: 15px  10px;
+  display: flex;
+  align-items:flex-start;
+  text-align: left;
+  justify-content: center;
+  gap: 26px;
+  /* flex-wrap: wrap; */
+}
+.left h2{
+  font-size: 3.4vw;
+  margin-left: -20px;
+}
+#category-left{
+  margin-left: -20px;
+  text-align: left;
+}
+
+/* 
+.categories .left i{
+  margin-left: -30px;
+  height: 50px;
+  width: 50px;
+  font-size: 3.4vw;
+  padding: 0 -25px;
+} */
+
+.categories {
+  display: flex;
+  justify-content: space-between; /* This ensures the left and right parts are spaced apart */
+  align-items: center; /* Vertically centers items */
+}
+
+.categories .left {
+  display: flex;
+  align-items: center;
+  margin-left: -30px; /* Adjust this value as needed to move the text and icon to the left */
+}
+
+.categories .left i {
+  height: 50px;
+  width: 50px;
+  font-size: 3.4vw;
+}
+
+.categories .right a {
+  margin-right: 15px; /* Adds spacing between links on the right */
+}
+
+.categories .right{
+  gap: 10px;
+  padding: 50px;
+  width: 80%;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.categories .right a{
+  height: 44px;
+  background-color: white;
+  border-radius: 25px;
+  padding: 8px;
+  text-decoration: none;
+}
+.categories .right a:hover {
+  transform: scale(1.06);
+  background-color: lightcyan;
+  text-decoration: underline;
+}
+
+
+  .container{
+    display: flex;
+    gap: 3.6vw;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1vh 4vh;
+  }
+  .box{
+    height: 36vh;
+    width: 20vw;
+    border: 2px solid black;
+    text-align: center;
+    overflow: hidden;
+    /* text-decoration: underline; */
+    border-radius: 15px;
+    font-size: 3vh;
+    text-transform: uppercase;
+    opacity: 0.8;
+    background-color: #fff;
+  }
+  .box img{
+    height: 27vh;
+    width: 20vw;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+.box:hover {
+  transform: scale(1.1);
+}
+
+
+  .real-search {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+   
+  }
+  .real-search-parent {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 100vh; */
+  }
+  .real-search h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  .real-search form {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+  }
+  
+  .real-search label {
+    margin: 10px 0 5px;
+    color: #555;
+  }
+  
+  .real-search input {
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
+  .real-search button {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .real-search button:hover {
+    background-color: #218838;
+  }
+
+  table {
+    width: 80%;
+    margin-top: 20px;
+    /* border-collapse: collapse; */
+  }
+  
+  th, td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .hidden {
+    display: none;
+  }
+
+.footer{
+    background-color: black;
+    opacity: 0.69;
+}
+
+.query-form h2{
+  padding: 20px 35px;
+}
+#queries{
+  font-size: 1.4vw;
+  border-radius: 10px;
+}
+
+#main-search{
+  font-size: 1.4vw;
+  /* margin-top: -30px; */
+  border-radius: 10px;
+  margin-bottom: 0px;
+}
+.container-main-search{
+ 
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:center;
+  align-items: first baseline;
+  /* gap:55px; */
+}
+.container-main-search h3{
+  font-size: 1.4vw;
+}
+
+
+
+
+
+
+/* Center the entire container in the page */
+.search-query {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  /* Vertically center content inside */
+  align-items: center;  /* Horizontally center content */
+  width: 100%;
+  max-width: 500px;  /* Limit the width of the form container */
+  padding: 30px;
+  background-color: white;  /* White background for the box */
+  border-radius: 10px;  /* Rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);  /* Subtle box shadow */
+  margin: 0 auto;  /* Center the container horizontally */
+}
+
+.search-query h1{
+  font-size: 2.7vw;
+}
+/* Style the headings */
+.search-query h1, 
+.search-query h2, 
+.search-query h3 {
+  text-align: center; 
+  font-size: 2.2vw; /* Center the headings */
+  /* margin-bottom: 20px; */
+  color: #333;  /* Set a consistent text color */
+}
+
+/* Style for the select dropdown and input fields */
+.query-form select, 
+#main-search {
+  width: 100%;
+  padding: 12px;
+  /* margin-bottom: 20px; */
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+/* Style for the submit button */
+button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;  /* Darken the button on hover */
+}
+
+/* Optional: Ensure placeholders are visible */
+::placeholder {
+  color: #888;
+  opacity: 1; /* Ensure placeholder is fully visible */
+}
+
+/* Ensure the form is displayed in a vertical column */
+.query-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 100%;
+  align-items: center;
+}
+
+/* Focus style for better accessibility */
+input:focus, 
+select:focus, 
+button:focus {
+  outline: 2px solid #007bff;
+  outline-offset: 2px;
+}
+
+
+/* Center the form container on the page */
+.query-form {
+  display: flex;
+  justify-content: center;  /* Center horizontally */
+  align-items: center;  /* Center vertically */
+  flex-direction: column;
+  width: 60vw;  /* Set the width of the form to 60% of the viewport */
+  margin: 0 auto;  /* Horizontal centering */
+  padding: 30px;
+}
+
+/* Style for the form elements */
+.query-form form {
+  display: flex;
+  flex-direction: column;  /* Stack the form elements vertically */
+  width: 100%;  /* Ensure the form fields take up the full width of the container */
+  gap: 20px;  /* Add space between form elements */
+}
+
+/* Align the "Select Category" label and dropdown horizontally */
+.query-form div {
+  display: flex;
+  flex-direction: row;  /* Display content in a row (horizontally) */
+  align-items: center;  /* Vertically center content */
+  justify-content: space-between;  /* Add space between label and dropdown */
+}
+
+/* Style the label "Select Category" */
+.query-form h3 {
+  margin-right: 20px;  /* Add space between label and dropdown */
+  color: #333;  /* Dark text color */
+  font-size: 16px;
+  margin-bottom: 0;  /* Remove bottom margin */
+}
+
+/* Style the select dropdown and input fields */
+.query-form select,
+.query-form input[type="text"] {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;  /* Rounded borders for inputs and dropdown */
+  box-sizing: border-box;  /* Ensure padding doesn’t affect width */
+  background-color: #fff;  /* White background for inputs */
+  transition: border-color 0.3s ease;  /* Smooth transition for border color */
+}
+
+/* Specific width for the dropdown to make sure it doesn't get too wide */
+.query-form select {
+  width: 60%;  /* Adjust the dropdown width */
+}
+
+/* Hover and focus effects */
+.query-form select:hover,
+.query-form input[type="text"]:hover {
+  border-color: #007bff;  /* Change border color on hover */
+}
+
+.query-form select:focus,
+.query-form input[type="text"]:focus {
+  outline: none;
+  border-color: #007bff;  /* Highlight border on focus */
+}
+
+/* Style for placeholder text */
+.query-form input::placeholder {
+  color: #888;  /* Light gray placeholder text */
+}
+
+/* Optional: Adjust padding for form container on smaller screens */
+@media (max-width: 768px) {
+  .query-form {
+      width: 80vw;  /* Make the form wider on smaller screens */
+      padding: 20px;
+  }
+
+  .query-form div {
+      flex-direction: column;  /* Stack label and dropdown vertically on small screens */
+      align-items: flex-start;  /* Align label and dropdown to the left */
+  }
+
+  .query-form select {
+      width: 100%;  /* Full width dropdown on smaller screens */
+  }
+}
+
+
+
+
+/* Center the form container on the page */
+.search-query {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 60vw;  /* Adjusted width to ensure visibility */
+  margin: 0 auto;  /* Center horizontally */
+  padding: 30px;
+  gap: 40px; /* Equal space between each section */
+}
+
+/* General form styling */
+.query-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;  /* Ensure full-width form */
+  gap: 20px; /* Equal space between each form field */
+}
+
+/* Style for the Query Type, Category and input fields */
+.query-form select,
+.query-form input[type="text"] {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;  /* Rounded corners */
+  box-sizing: border-box;  /* Ensure padding doesn’t affect width */
+  background-color: #fff;  /* White background */
+  transition: border-color 0.3s ease;
+}
+
+/* Style for the Search button */
+form#product-search-form button {
+  margin-top: 20px;  /* Space above the button */
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 8px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form#product-search-form button:hover {
+  background-color: #0056b3;  /* Darker blue on hover */
+}
+
+/* Consistent spacing for the labels */
+.query-form h3 {
+  margin-bottom: 5px;
+}
+
+/* Adjust form layout on smaller screens */
+@media (max-width: 768px) {
+  .search-query {
+      width: 80vw;  /* Form takes more width on smaller screens */
+      gap: 30px;
+  }
+
+  .query-form div {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  .query-form div select {
+      width: 100%;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width:600px) {
+    .nav{
+        padding: 0 6vw;
+        height: 90px;
+    }
+    .nav h2{
+        font-size: 5.1vw;
+    }
+    .nav h4{
+        display: none;
+    }
+    .nav button{
+        display: none;
+    }
+    .nav i{
+        display: block;
+        font-size: 4.5vw;
+    }
+    .content{
+        height: calc(100% - 60px);
+        flex-direction: column;
+    }
+    .left{
+        width: 100%;
+        height: 45%;
+        padding: 4vw 6vw;
+    }
+    .right{
+        width: 100%;
+        height: 55%;
+    }
+    .left h1{
+        font-size: 10vw;
+        line-height: 11vw;
+    }
+    .left p{
+        font-size: 3vw;
+        width: 90%;
+        margin-top: 5vw;
+        margin-bottom: 6vw;
+    }
+    .content button{
+        padding: 3vw 6vw;
+        font-size: 3.5vw;
+        border-radius: 3px;
+        font-weight: 600;
+    }
+}
+
+
+
+
+
+/* body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+} */
+
+.container-new {
+    width: 80%;
+    margin: 50px auto;
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+}
+
+form input, form button {
+    padding: 10px;
+    font-size: 16px;
+}
+
+form button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #218838;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ccc;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+
+
+
+
+/* Container styling */
+.container-new {
+  width: 80vw;  /* Adjust the width of the container */
+  margin: 30px auto;  /* Center the container */
+  text-align: center;
+}
+
+.container-new h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Table styling */
+table {
+  width: 100%;  /* Table takes full width of the container */
+  border-collapse: collapse;  /* Remove default border spacing */
+  margin: 20px 0;
+  font-size: 1.1em;
+  background-color: #f8f8f8;  /* Light background for the table */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Slight shadow for a modern look */
+}
+
+/* Table header styling */
+table thead th {
+  background-color: #4CAF50;  /* Header background color */
+  color: white;  /* White text in the header */
+  text-align: center;
+  padding: 12px 15px;  /* Padding inside the table headers */
+  font-weight: bold;
+}
+
+/* Table body styling */
+table tbody td {
+  padding: 12px 15px;
+  text-align: center;  /* Center-align text inside table cells */
+  border-bottom: 1px solid #ddd;  /* Light bottom border between rows */
+}
+
+/* Row hover effect */
+table tbody tr:hover {
+  background-color: #f1f1f1;  /* Slightly different background color on hover */
+}
+
+/* Alternate row colors */
+table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Link styling */
+table tbody td a {
+  color: #007bff;  /* Blue color for links */
+  text-decoration: none;
+  transition: color 0.3s ease;  /* Smooth transition effect */
+}
+
+table tbody td a:hover {
+  color: #0056b3;  /* Darker blue on hover */
+  text-decoration: underline;  /* Underline links on hover */
+}
+
+/* Adjustments for small screens */
+@media (max-width: 768px) {
+  .container-new {
+      width: 90vw;  /* Adjust container width for smaller screens */
+  }
+  
+  table {
+      font-size: 0.9em;
+  }
+}
+
+

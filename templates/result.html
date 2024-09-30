@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Product Price Comparison</h1>
+        <form action="/scrape" method="POST">
+            <input type="text" name="query" placeholder="Enter product name" required>
+            <button type="submit">Search</button>
+        </form>
+    </div>
+    <div class="container">
+        <h1>Search Results</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Source</th>
+                    <th>Price</th>
+                    <th>Link</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for product in products %}
+                <tr>
+                    <td>{{ product.name }}</td>
+                    <td>{{ product.source }}</td>
+                    <td>{{ product.price }}</td>
+                    <td><a href="{{ product.link }}" target="_blank">View Product</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

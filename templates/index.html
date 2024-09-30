@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Procurement</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+
+<body>
+    <div class="main">
+        <div class="nav">
+            <img src="../static/images/logo1.jpg" alt="logo1">
+            <div class="nav-part2">
+                <h4>Home</h4>
+                <h4>Dashboard</h4>
+                <h4>Price Prediction</h4>
+                <h4>ROI Calculator</h4>
+                <h4>ChatBot</h4>
+                <button>Sign In</button>
+                <i class="ri-menu-3-fill"></i>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="left">
+                <h1>Search the most <span> Reasonable </span>Products here.</h1>
+                <p>
+                    Discover the best deals effortlessly with our smart price comparison
+                    platform. Find your desired products at the lowest prices, tailored
+                    to your specifications, all in one place!
+                </p>
+                <button>Explore Now</button>
+            </div>
+
+            <div class="right">
+                <img src="../static/images/price-estimation.png" alt="" />
+            </div>
+        </div>
+
+        <div class="seperation">.</div>
+
+        <div class="feature">
+            <h1>Save Time Managing Your Business with our Services</h1>
+            <p>
+                Navigate through all Features of
+                <span style="font-weight: 700">PriceScape</span>
+            </p>
+            <div class="features-parent">
+                <div class="features">
+                    <img src="../static/images/best-buy-link.jfif" alt="">
+                    <h2>Best Buy Link</h2>
+                    <div>Scans multiple platforms to find the best deals for a specific product, ensuring both the lowest price and good quality, and provides direct links to the most suitable offer.</div>
+                </div>
+                <div class="features features2">
+                    <img src="../static/images/price-tracking.jfif" alt="">
+                    <h2>Price Tracking</h2>
+                    <div>Continuously monitors the prices of products across multiple platforms, providing updates on price changes, historical trends, and estimated future prices.</div>
+                </div>
+                <div class="features">
+                    <img src="../static/images/calculator.jfif" alt="">
+                    <h2>ROI based Calculator</h2>
+                    <div>Allows users to input purchase data (product cost, quantity, and duration) to calculate potential profitability and evaluate deals.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="seperation">.</div>
+
+        <div class="search">
+            <div class="categories">
+                <div class="left" id="Category-left">
+                    <i class="ri-shopping-cart-fill"></i>
+                    <h2>Categories</h2>
+                </div>
+                <div class="right">
+                    <a href="">All Products</a>
+                    <a href="">Electronics</a>
+                    <a href="">Clothing</a>
+                    <a href="">Machinery</a>
+                    <a href="">Networking Devices</a>
+                    <a href="">Stationary</a>
+                    <a href="">Furniture</a>
+                    <a href="">Services</a>
+                </div>
+            </div>
+
+            <div class="container" style="text-decoration: none;">
+                <div class="box">
+                    <img src="../static/images/laptop.jpg" alt="" />
+                    <h4>Elecrtonics and Appliances</h4>
+                </div>
+                <div class="box">
+                    <img src="../static/images/clothes.png" alt="">
+                    <h4>Clothes</h4>
+                </div>
+                <div class="box">
+                    <img src="../static/images/furniture.png" alt="">
+                    <h4>Furniture</h4>
+                </div>
+                <div class="box">
+                    <img src="../static/images/stationary.png" alt="">
+                    <h4>Stationary</h4>
+                </div>
+                <div class="box">
+                    <img src="../static/images/bag.png" alt="">
+                    <h4>Bags</h4>
+                </div>
+                <div class="box">
+                    <img src="../static/images/devices.png" alt="">
+                    <h4>Networking Devices</h4>
+                </div>
+                <div class="box">
+                    <img src="../static/images/shoes.png" alt="">
+                    <h4>Shoes</h4>
+                </div>
+                <div class="box">
+                    <img src="../static/images/service.png" alt="">
+                    <h4>Services</h4>
+                </div>
+            </div>
+
+
+
+        </div>
+
+
+        <div id="search-container" class="container-new container-main-search">
+            <div class="search-query">
+                <h1>Product Price Comparison</h1>
+                <form class="query-form">
+                    <h2>Select your Query Type</h2>
+                    <select name="queries" id="queries">
+                        <option value="query1">
+                            Query based on exact Make/Model of a Product
+                        </option>
+                        <option value="query2">
+                            Query based most relevant specifications of a Product
+                        </option>
+                        <option value="query3">
+                            Query based on basic Reqirements of a Service
+                        </option>
+                    </select>
+                </form>
+
+                <h3>Search your Products</h3>
+                <form action="/scrape" method="POST">
+                    <input type="text" id="main-search" name="query" placeholder="Enter product" required />
+                    <button type="submit">Search</button>
+                </form>
+
+                <div class="query-form">
+                    <form action="">
+                        <div>
+                            <h3>Select Category</h3>
+                           <select name="categories" id="">
+                            <option value="">Pick a Category</option>
+                            <option value="electronics">Electronics</option>
+                            <option value="furniture">Furniture</option>
+                            <option value="machinery">Machinery</option>
+                            <option value="stationary">Stationary</option>
+                            <option value="services">Services</option>
+                           </select>
+                        </div>
+                        <div>
+                            <h3>Make of Product</h3>
+                            <input type="text" placeholder="Enter Make of the Product">
+                        </div>
+                        <div>
+                            <h3>Model</h3>
+                            <input type="text" placeholder="Enter Model of the Product">
+                        </div>
+                    </form>
+                </div>
+
+
+
+
+            </div>
+
+            
+            <div class="container-new">
+                <h1>Search Results</h1>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Product Name</th>
+                            <th>Source</th>
+                            <th>Price(in $)</th>
+                            <th>Link</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for product in products %}
+                        <tr>
+                            <td>{{ product.name }}</td>
+                            <td>{{ product.source }}</td>
+                            <td>{{ product.price }}</td>
+                            <td>
+                                <a href="{{ product.link }}" target="_blank">View Product</a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+
+        
+        <div class="seperation">.</div>
+
+        <div class="footer">footer</div>
+
+</body>
+
+</html>
