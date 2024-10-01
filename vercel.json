@@ -12,9 +12,6 @@
         "dest": "app.py" 
       }
     ],
-    "python": {
-      "version": "3.9"  
-    },
     "env": {
       "PLAYWRIGHT_BROWSERS_PATH": "0"
     }
