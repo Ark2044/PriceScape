@@ -1,0 +1,22 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "app.py",
+        "use": "@vercel/python"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "app.py"
+      }
+    ],
+    "env": {
+      "PLAYWRIGHT_BROWSERS_PATH": "0"
+    },
+    "installCommand": "pip install -r requirements.txt && ./postinstall.sh",
+    "buildCommand": "echo 'No build step required'",
+    "devCommand": "python app.py"
+  }
+  
