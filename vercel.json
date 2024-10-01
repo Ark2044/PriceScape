@@ -1,15 +1,22 @@
 {
     "version": 2,
     "builds": [
-        {
-            "src": "app.py",
-            "use": "@vercel/python"
-        }
+      {
+        "src": "app.py", 
+        "use": "@vercel/python"
+      }
     ],
     "routes": [
-        {
-            "src": "/(.*)",
-            "dest": "app.py"
-        }
-    ]
-}
+      {
+        "src": "/(.*)",
+        "dest": "app.py" 
+      }
+    ],
+    "python": {
+      "version": "3.9"  
+    },
+    "env": {
+      "PLAYWRIGHT_BROWSERS_PATH": "0"
+    }
+  }
+  
