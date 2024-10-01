@@ -1,18 +1,29 @@
 from flask import Flask, render_template, request
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service as ChromeService
+from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
 from bs4 import BeautifulSoup
 import time
 
 app = Flask(__name__)
 
-# Function to scrape Amazon, Flipkart, and eBay for cheapest products
+# Function to configure headless Chrome
+def get_headless_driver():
+    chrome_options = Options()
+    chrome_options.add_argument("--headless")  # Run Chrome in headless mode
+    chrome_options.add_argument("--disable-gpu")  # Disable GPU acceleration
+    chrome_options.add_argument("--no-sandbox")
+    chrome_options.add_argument("--disable-dev-shm-usage")
+    driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()), options=chrome_options)
+    return driver
+
+# Function to scrape Amazon for cheapest products
 def scrape_amazon(query):
-    driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
+    driver = get_headless_driver()  # Use headless driver
     search_url = f"https://www.amazon.in/s?k={query}"
     driver.get(search_url)
-    time.sleep(3)
+    time.sleep(3)  # Wait for the page to load
     soup = BeautifulSoup(driver.page_source, 'html.parser')
     driver.quit()
 
@@ -24,15 +35,15 @@ def scrape_amazon(query):
         if name and price and link:
             products.append({
                 'name': name.text,
-                'price': price.text,
+                'price': price.text.replace(',', ''),
                 'link': "https://www.amazon.in" + link['href'],
                 'source': 'Amazon'
             })
-    return products[:10]  # Return top 10 cheapest products
+    return products[:10]  # Return top 10 products
 
-
+# Function to scrape eBay for cheapest products
 def scrape_ebay(query):
-    driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
+    driver = get_headless_driver()  # Use headless driver
     search_url = f"https://www.ebay.com/sch/i.html?_nkw={query}"
     driver.get(search_url)
     time.sleep(3)
@@ -51,10 +62,11 @@ def scrape_ebay(query):
                 'link': link['href'],
                 'source': 'eBay'
             })
-    return products[:10]  # Return top 10 cheapest products
+    return products[:10]  # Return top 10 products
 
+# Function to scrape Flipkart for cheapest products
 def scrape_flipkart(query):
-    driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
+    driver = get_headless_driver()  # Use headless driver
     search_url = f"https://www.flipkart.com/search?q={query}"
     driver.get(search_url)
     time.sleep(3)
@@ -73,9 +85,7 @@ def scrape_flipkart(query):
                 'link': "https://www.flipkart.com" + link['href'],
                 'source': 'Flipkart'
             })
-    return products[:10]  # Return top 10 cheapest products
-
-
+    return products[:10]  # Return top 10 products
 
 @app.route('/')
 def index():

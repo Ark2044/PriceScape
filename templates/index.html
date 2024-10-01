@@ -8,6 +8,33 @@
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+    <style>
+        /* Spinner styling */
+        .spinner {
+            display: none; /* Hide spinner by default */
+            width: 50px;
+            height: 50px;
+            border: 6px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 6px solid #3498db;
+            animation: spin 1s linear infinite;
+            margin: auto;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1000; /* Ensure it stays above other elements */
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -91,7 +118,7 @@
             <div class="container" style="text-decoration: none;">
                 <div class="box">
                     <img src="../static/images/laptop.jpg" alt="" />
-                    <h4>Elecrtonics and Appliances</h4>
+                    <h4>Electronics and Appliances</h4>
                 </div>
                 <div class="box">
                     <img src="../static/images/clothes.png" alt="">
@@ -122,11 +149,7 @@
                     <h4>Services</h4>
                 </div>
             </div>
-
-
-
         </div>
-
 
         <div id="search-container" class="container-new container-main-search">
             <div class="search-query">
@@ -134,20 +157,14 @@
                 <form class="query-form">
                     <h2>Select your Query Type</h2>
                     <select name="queries" id="queries">
-                        <option value="query1">
-                            Query based on exact Make/Model of a Product
-                        </option>
-                        <option value="query2">
-                            Query based most relevant specifications of a Product
-                        </option>
-                        <option value="query3">
-                            Query based on basic Reqirements of a Service
-                        </option>
+                        <option value="query1">Query based on exact Make/Model of a Product</option>
+                        <option value="query2">Query based on the most relevant specifications of a Product</option>
+                        <option value="query3">Query based on basic Requirements of a Service</option>
                     </select>
                 </form>
 
                 <h3>Search your Products</h3>
-                <form action="/scrape" method="POST">
+                <form action="/scrape" method="POST" id="searchForm">
                     <input type="text" id="main-search" name="query" placeholder="Enter product" required />
                     <button type="submit">Search</button>
                 </form>
@@ -156,14 +173,14 @@
                     <form action="">
                         <div>
                             <h3>Select Category</h3>
-                           <select name="categories" id="">
-                            <option value="">Pick a Category</option>
-                            <option value="electronics">Electronics</option>
-                            <option value="furniture">Furniture</option>
-                            <option value="machinery">Machinery</option>
-                            <option value="stationary">Stationary</option>
-                            <option value="services">Services</option>
-                           </select>
+                            <select name="categories" id="">
+                                <option value="">Pick a Category</option>
+                                <option value="electronics">Electronics</option>
+                                <option value="furniture">Furniture</option>
+                                <option value="machinery">Machinery</option>
+                                <option value="stationary">Stationary</option>
+                                <option value="services">Services</option>
+                            </select>
                         </div>
                         <div>
                             <h3>Make of Product</h3>
@@ -175,13 +192,8 @@
                         </div>
                     </form>
                 </div>
-
-
-
-
             </div>
 
-            
             <div class="container-new">
                 <h1>Search Results</h1>
                 <table>
@@ -189,7 +201,7 @@
                         <tr>
                             <th>Product Name</th>
                             <th>Source</th>
-                            <th>Price(in $)</th>
+                            <th>Price (in $)</th>
                             <th>Link</th>
                         </tr>
                     </thead>
@@ -207,15 +219,23 @@
                     </tbody>
                 </table>
             </div>
-
         </div>
 
-
-        
         <div class="seperation">.</div>
 
         <div class="footer">footer</div>
 
+        <!-- Loading spinner -->
+        <div class="spinner" id="loadingSpinner"></div>
+
+    </div>
+
+    <script>
+        // Show spinner when form is submitted
+        document.getElementById('searchForm').addEventListener('submit', function() {
+            document.getElementById('loadingSpinner').style.display = 'block';
+        });
+    </script>
 </body>
 
 </html>
