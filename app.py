@@ -97,6 +97,5 @@ def scrape():
 
 if __name__ == '__main__':
     # Determine if running in a hosted environment or locally
-    host = '0.0.0.0' if os.environ.get('ENV') == 'production' else '127.0.0.1'
-    port = int(os.environ.get("PORT", 5000))  # Default to 5000 if PORT is not set
-    app.run(host=host, port=port)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=port)
